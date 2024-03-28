@@ -7,7 +7,6 @@ import Logout from "pages/Logout";
 const Routes = () => {
   const { token } = useAuth();
 
-  // Define public routes accessible to all users
   const routesForPublic = [
     {
       path: "/service",
@@ -19,11 +18,10 @@ const Routes = () => {
     },
   ];
 
-  // Define routes accessible only to authenticated users
   const routesForAuthenticatedOnly = [
     {
       path: "/",
-      element: <ProtectedRoute />, // Wrap the component in ProtectedRoute
+      element: <ProtectedRoute />,
       children: [
         {
           path: "/",
@@ -41,11 +39,10 @@ const Routes = () => {
     },
   ];
 
-  // Define routes accessible only to non-authenticated users
   const routesForNotAuthenticatedOnly = [
     {
       path: "/",
-      element: <div>Home Page</div>,
+      element: <h1>Home Page</h1>,
     },
     {
       path: "/login",
@@ -53,7 +50,6 @@ const Routes = () => {
     },
   ];
 
-  // Combine and conditionally include routes based on authentication status
   const router = createBrowserRouter([
     ...routesForPublic,
     ...(!token ? routesForNotAuthenticatedOnly : []),
