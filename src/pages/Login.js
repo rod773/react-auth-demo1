@@ -14,7 +14,7 @@ const Login = () => {
     handleLogin();
   }, 3 * 1000);
 
-  return <>Login Page</>;
+  return <h1>Login Page</h1>;
 };
 
 export default Login;
