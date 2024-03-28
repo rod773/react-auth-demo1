@@ -3,6 +3,7 @@ import { useAuth } from "provider/authProvider";
 import { ProtectedRoute } from "./ProtectedRoute";
 import Login from "pages/Login";
 import Logout from "pages/Logout";
+import Home from "./../pages/Home";
 
 const Routes = () => {
   const { token } = useAuth();
@@ -42,7 +43,7 @@ const Routes = () => {
   const routesForNotAuthenticatedOnly = [
     {
       path: "/",
-      element: <h1>Home Page</h1>,
+      element: <Home />,
     },
     {
       path: "/login",
