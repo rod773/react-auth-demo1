@@ -20,7 +20,7 @@ const Home = () => {
             >
               Entrar
             </button>
-            <button className="px-6 py-2 text-white transition duration-500 ease-out bg-blue-700 rounded-lg hover:bg-blue-800 hover:ease-in hover:underline">
+            <button className="px-6 py-2 text-white transition duration-500 ease-out bg-indigo-500 rounded-lg hover:bg-blue-800 hover:ease-in hover:underline">
               Registro
             </button>
           </div>
