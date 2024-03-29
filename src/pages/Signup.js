@@ -126,7 +126,7 @@ function Signup() {
                   type="submit"
                   className="mt-4 bg-indigo-500 text-white py-2 px-6 rounded-lg"
                 >
-                  Login
+                  Register
                 </button>
                 <button
                   onClick={() => {
