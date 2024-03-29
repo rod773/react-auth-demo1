@@ -2,8 +2,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { useAuth } from "provider/authProvider";
 import { ProtectedRoute } from "./ProtectedRoute";
 import Login from "pages/Login";
+import Signup from "pages/Signup";
 import Logout from "pages/Logout";
-import Home from "./../pages/Home";
+import Home from "pages/Home";
 
 const Routes = () => {
   const { token } = useAuth();
@@ -48,6 +49,10 @@ const Routes = () => {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/signup",
+      element: <Signup />,
     },
   ];
 
