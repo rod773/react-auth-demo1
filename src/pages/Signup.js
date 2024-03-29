@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Signup() {
+  const navigate = useNavigate();
+
   const url = "https://infodemencias.com/wp-json/trabajadores/v1/signup";
 
   const [formData, setFormData] = useState({
@@ -41,7 +44,7 @@ function Signup() {
     <>
       <form onSubmit={handleSignup}>
         <div className="relative py-3 sm:max-w-xl mx-auto text-center">
-          <span className="text-2xl font-light">Login to your account</span>
+          <span className="text-2xl font-light">Registro</span>
           <div className="relative mt-4 bg-white shadow-md sm:rounded-lg text-left">
             <div className="h-2 bg-indigo-400 rounded-t-md"></div>
             <div className="py-6 px-8">
@@ -118,9 +121,15 @@ function Signup() {
                 >
                   Login
                 </button>
-                <a href="#" className="text-sm hover:underline">
-                  Forgot password?
-                </a>
+                <button
+                  onClick={() => {
+                    navigate("/", { replace: true });
+                  }}
+                  href="#"
+                  className="text-sm hover:underline"
+                >
+                  volver?
+                </button>
               </div>
             </div>
           </div>
