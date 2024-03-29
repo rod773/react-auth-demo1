@@ -1,12 +1,41 @@
 import { useState } from "react";
+import axios from "axios";
 
 function Signup() {
+  const url = "https://infodemencias.com/wp-json/trabajadores/v1/signup";
+
   const [formData, setFormData] = useState({
+    dni: "",
+    nombre: "",
+    apellido: "",
+    usuario: "",
     email: "",
     password: "",
   });
 
-  const handleSignup = () => {};
+  const register = async () => {
+    console.log(formData);
+
+    const config = {
+      url: url,
+      method: "POST",
+      headers: {
+        "Content-type": "application/json;charset=UTF-8",
+      },
+      data: JSON.stringify(formData),
+    };
+
+    await axios(config)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+    register();
+  };
 
   return (
     <>
