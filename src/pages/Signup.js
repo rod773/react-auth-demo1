@@ -132,13 +132,13 @@ function Signup() {
                 >
                   Register
                 </button>
-                <p className="text-red">{error}</p>
+                <span className="text-red-700">{error}</span>
                 <button
                   onClick={() => {
                     navigate("/", { replace: true });
                   }}
-                  href="#"
-                  className="text-sm hover:underline"
+                  type="button"
+                  className="text-sm  cursor-pointer"
                 >
                   volver?
                 </button>
