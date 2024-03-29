@@ -8,6 +8,8 @@ function Signup() {
 
   const { setToken } = useAuth();
 
+  const [error, setError] = useState("");
+
   const url = "https://infodemencias.com/wp-json/trabajadores/v1/signup";
 
   const [formData, setFormData] = useState({
@@ -36,6 +38,9 @@ function Signup() {
         console.log(response.data);
         if (response.data.inserted) {
           setToken(response.data.token);
+          navigate("/", { replace: true });
+        } else {
+          setError("error en la insercion");
         }
       })
       .catch((error) => console.log(error));
@@ -44,7 +49,6 @@ function Signup() {
   const handleSignup = (e) => {
     e.preventDefault();
     register();
-    navigate("/", { replace: true });
   };
 
   return (
@@ -128,6 +132,7 @@ function Signup() {
                 >
                   Register
                 </button>
+                <span className="text-red">{error}</span>
                 <button
                   onClick={() => {
                     navigate("/", { replace: true });
