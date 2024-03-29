@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useAuth } from "./../provider/authProvider";
 
 function Signup() {
   const navigate = useNavigate();
+
+  const { setToken } = useAuth();
 
   const url = "https://infodemencias.com/wp-json/trabajadores/v1/signup";
 
@@ -31,6 +34,9 @@ function Signup() {
     await axios(config)
       .then((response) => {
         console.log(response.data);
+        if (response.data.inserted) {
+          setToken(response.data.token);
+        }
       })
       .catch((error) => console.log(error));
   };
@@ -38,6 +44,7 @@ function Signup() {
   const handleSignup = (e) => {
     e.preventDefault();
     register();
+    navigate("/", { replace: true });
   };
 
   return (
