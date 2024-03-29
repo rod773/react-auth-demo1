@@ -132,7 +132,7 @@ function Signup() {
                 >
                   Register
                 </button>
-                <span className="text-red">{error}</span>
+                <p className="text-red">{error}</p>
                 <button
                   onClick={() => {
                     navigate("/", { replace: true });
