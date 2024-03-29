@@ -45,45 +45,83 @@ function Signup() {
           <div className="relative mt-4 bg-white shadow-md sm:rounded-lg text-left">
             <div className="h-2 bg-indigo-400 rounded-t-md"></div>
             <div className="py-6 px-8">
-              <label className="block font-semibold">
-                Username or Email
-                <label>
-                  <input
-                    type="text"
-                    placeholder="Email"
-                    className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                  />
-                  <label className="block mt-3 font-semibold">
-                    Password
-                    <label>
-                      <input
-                        type="password"
-                        placeholder="Password"
-                        className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md"
-                        value={formData.password}
-                        onChange={(e) =>
-                          setFormData({ ...formData, password: e.target.value })
-                        }
-                      />
-                      <div className="flex justify-between items-baseline">
-                        <button
-                          type="submit"
-                          className="mt-4 bg-indigo-500 text-white py-2 px-6 rounded-lg"
-                        >
-                          Login
-                        </button>
-                        <a href="#" className="text-sm hover:underline">
-                          Forgot password?
-                        </a>
-                      </div>
-                    </label>
-                  </label>
-                </label>
-              </label>
+              <label className="block font-semibold">Dni</label>
+              <input
+                type="text"
+                placeholder="Dni"
+                className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md"
+                value={formData.dni}
+                onChange={(e) =>
+                  setFormData({ ...formData, dni: e.target.value })
+                }
+                required
+              />
+              <label className="block font-semibold">Nombre</label>
+              <input
+                type="text"
+                placeholder="Nombre"
+                className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md"
+                value={formData.nombre}
+                onChange={(e) =>
+                  setFormData({ ...formData, nombre: e.target.value })
+                }
+                required
+              />
+              <label className="block font-semibold">Apellido</label>
+              <input
+                type="text"
+                placeholder="Apellido"
+                className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md"
+                value={formData.apellido}
+                onChange={(e) =>
+                  setFormData({ ...formData, apellido: e.target.value })
+                }
+                required
+              />
+              <label className="block font-semibold">Usuario</label>
+              <input
+                type="text"
+                placeholder="Usuario"
+                className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md"
+                value={formData.usuario}
+                onChange={(e) =>
+                  setFormData({ ...formData, usuario: e.target.value })
+                }
+                required
+              />
+              <label className="block font-semibold">Email</label>
+              <input
+                type="email"
+                placeholder="Email"
+                className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+                required
+              />
+              <label className="block mt-3 font-semibold">Password</label>
+              <input
+                type="password"
+                placeholder="Password"
+                className=" border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-1 focus:ring-indigo-600 rounded-md"
+                value={formData.password}
+                onChange={(e) =>
+                  setFormData({ ...formData, password: e.target.value })
+                }
+                required
+              />
+              <div className="flex justify-between items-baseline">
+                <button
+                  type="submit"
+                  className="mt-4 bg-indigo-500 text-white py-2 px-6 rounded-lg"
+                >
+                  Login
+                </button>
+                <a href="#" className="text-sm hover:underline">
+                  Forgot password?
+                </a>
+              </div>
             </div>
           </div>
         </div>
